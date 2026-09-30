@@ -36,7 +36,7 @@ export default function GamePage() {
     try {
       const res = await fetch(`${import.meta.env.VITE_API_URL || 'http://localhost:8000'}/api/runs`, {
         method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
+        headers: { 'Content-Type': 'application/json', 'ngrok-skip-browser-warning': 'true' },
         body: JSON.stringify({ user_id: 1 })
       });
       const data = await res.json();
@@ -54,7 +54,9 @@ export default function GamePage() {
     setSelectedDoor(null);
     setAnswer('');
     try {
-      const res = await fetch(`${import.meta.env.VITE_API_URL || 'http://localhost:8000'}/api/runs/${rId}/level`);
+      const res = await fetch(`${import.meta.env.VITE_API_URL || 'http://localhost:8000'}/api/runs/${rId}/level`, {
+        headers: { 'ngrok-skip-browser-warning': 'true' }
+      });
       const data = await res.json();
       setLevel(data);
       setStartTime(Date.now());
@@ -72,7 +74,10 @@ export default function GamePage() {
     if (!confirm) return;
     
     try {
-      const res = await fetch(`${import.meta.env.VITE_API_URL || 'http://localhost:8000'}/api/runs/${runId}/abandon`, { method: 'POST' });
+      const res = await fetch(`${import.meta.env.VITE_API_URL || 'http://localhost:8000'}/api/runs/${runId}/abandon`, { 
+        method: 'POST',
+        headers: { 'ngrok-skip-browser-warning': 'true' }
+      });
       const data = await res.json();
       setScore(data.run_state.score);
       setDoorChanges(data.run_state.door_changes);
@@ -91,7 +96,7 @@ export default function GamePage() {
     try {
       const res = await fetch(`${import.meta.env.VITE_API_URL || 'http://localhost:8000'}/api/runs/${runId}/attempt`, {
         method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
+        headers: { 'Content-Type': 'application/json', 'ngrok-skip-browser-warning': 'true' },
         body: JSON.stringify({
           puzzle_id: selectedDoor.puzzle_id,
           answer,
