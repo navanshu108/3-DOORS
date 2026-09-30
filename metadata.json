@@ -1,0 +1,6 @@
+{
+  "name": "Local Research Agent",
+  "description": "Local-first autonomous research agent combining private document RAG with on-device Ollama LLM and autonomous web research fallback.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}

@@ -1,0 +1,37 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  body {
+    @apply bg-[#0a0a0c] text-green-400 font-mono selection:bg-green-500/30 selection:text-green-200;
+  }
+}
+
+@keyframes pulseAura {
+  0%, 100% { opacity: 0.6; transform: scale(1); }
+  50% { opacity: 0.85; transform: scale(1.02); }
+}
+.rune-glow {
+  animation: pulseAura 4s ease-in-out infinite;
+}
+.door-hover-effect {
+  transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+}
+.door-hover-effect:hover {
+  transform: translateY(-6px);
+}
+.material-symbols-outlined {
+  font-family: 'Material Symbols Outlined';
+  font-weight: normal;
+  font-style: normal;
+  font-size: 20px;
+  line-height: 1;
+  display: inline-block;
+  text-transform: none;
+  letter-spacing: normal;
+  word-wrap: normal;
+  white-space: nowrap;
+  direction: ltr;
+  -webkit-font-smoothing: antialiased;
+}

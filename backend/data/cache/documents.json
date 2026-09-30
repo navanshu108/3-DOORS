@@ -1,0 +1,38 @@
+{
+  "725d25cc-e4d4-40bc-95ef-866b5179c03a": {
+    "chunk_count": 0,
+    "error_message": "No readable text could be extracted from this document.",
+    "file_type": ".pdf",
+    "filename": "10 marksheet.pdf",
+    "id": "725d25cc-e4d4-40bc-95ef-866b5179c03a",
+    "indexed": false,
+    "size_bytes": 162947,
+    "status": "failed",
+    "stored_name": "725d25cc-e4d4-40bc-95ef-866b5179c03a.pdf",
+    "uploaded_at": "2026-09-28T18:26:12.060575Z"
+  },
+  "9482a976-aacc-46e4-932c-423a39d810e7": {
+    "chunk_count": 0,
+    "error_message": "No readable text could be extracted from this document.",
+    "file_type": ".pdf",
+    "filename": "AADHAR1.pdf",
+    "id": "9482a976-aacc-46e4-932c-423a39d810e7",
+    "indexed": false,
+    "size_bytes": 86360,
+    "status": "failed",
+    "stored_name": "9482a976-aacc-46e4-932c-423a39d810e7.pdf",
+    "uploaded_at": "2026-09-28T18:26:30.679680Z"
+  },
+  "c6b9c44b-917d-47f3-9527-1849b8cda91c": {
+    "chunk_count": 1,
+    "error_message": null,
+    "file_type": ".pdf",
+    "filename": "Tshirt Size List.pdf",
+    "id": "c6b9c44b-917d-47f3-9527-1849b8cda91c",
+    "indexed": true,
+    "size_bytes": 40382,
+    "status": "ready",
+    "stored_name": "c6b9c44b-917d-47f3-9527-1849b8cda91c.pdf",
+    "uploaded_at": "2026-09-28T18:26:41.429218Z"
+  }
+}

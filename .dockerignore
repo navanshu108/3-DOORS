@@ -1,0 +1,33 @@
+# Git
+.git
+.gitignore
+
+# Dependencies & Virtualenvs
+node_modules
+.venv
+venv
+__pycache__
+*.pyc
+
+# Local Data and caches
+data/documents/*
+!data/documents/.gitkeep
+data/vector_store/*
+!data/vector_store/.gitkeep
+data/cache/*
+!data/cache/.gitkeep
+.pytest_cache
+.ruff_cache
+.mypy_cache
+dist
+build
+
+# Env files (keep example)
+.env
+*.env
+!*.env.example
+
+# OS / Editor
+.DS_Store
+.idea
+.vscode
