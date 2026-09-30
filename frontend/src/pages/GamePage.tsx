@@ -35,7 +35,7 @@ export default function GamePage() {
 
   const initRun = async () => {
     try {
-      const res = await fetch('http://localhost:8000/api/runs', {
+      const res = await fetch(`${import.meta.env.VITE_API_URL || 'http://localhost:8000'}/api/runs`, {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({ user_id: 1 })
@@ -56,7 +56,7 @@ export default function GamePage() {
     setPuzzleContent(null);
     setAnswer('');
     try {
-      const res = await fetch(`http://localhost:8000/api/runs/${rId}/level`);
+      const res = await fetch(`${import.meta.env.VITE_API_URL || 'http://localhost:8000'}/api/runs/${rId}/level`);
       const data = await res.json();
       setLevel(data);
       setStartTime(Date.now());
@@ -87,7 +87,7 @@ export default function GamePage() {
     if (!confirm) return;
     
     try {
-      const res = await fetch(`http://localhost:8000/api/runs/${runId}/abandon`, { method: 'POST' });
+      const res = await fetch(`${import.meta.env.VITE_API_URL || 'http://localhost:8000'}/api/runs/${runId}/abandon`, { method: 'POST' });
       const data = await res.json();
       setScore(data.run_state.score);
       setDoorChanges(data.run_state.door_changes);
@@ -104,7 +104,7 @@ export default function GamePage() {
     const timeTaken = (Date.now() - startTime) / 1000;
 
     try {
-      const res = await fetch(`http://localhost:8000/api/runs/${runId}/attempt`, {
+      const res = await fetch(`${import.meta.env.VITE_API_URL || 'http://localhost:8000'}/api/runs/${runId}/attempt`, {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({
