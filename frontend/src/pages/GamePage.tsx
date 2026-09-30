@@ -19,7 +19,6 @@ export default function GamePage() {
   const navigate = useNavigate();
   const [level, setLevel] = useState<LevelView | null>(null);
   const [selectedDoor, setSelectedDoor] = useState<PuzzleDoor | null>(null);
-  const [puzzleContent, setPuzzleContent] = useState<any>(null);
   const [answer, setAnswer] = useState('');
   const [loading, setLoading] = useState(true);
   const [mistakes, setMistakes] = useState(0);
@@ -53,7 +52,6 @@ export default function GamePage() {
     setLoading(true);
     setLastGrade(null);
     setSelectedDoor(null);
-    setPuzzleContent(null);
     setAnswer('');
     try {
       const res = await fetch(`${import.meta.env.VITE_API_URL || 'http://localhost:8000'}/api/runs/${rId}/level`);
@@ -66,20 +64,7 @@ export default function GamePage() {
     setLoading(false);
   };
 
-  const fetchPuzzle = async (puzzleId: string) => {
-    try {
-      const res = await fetch(`http://localhost:8000/api/puzzles/${puzzleId}`);
-      const data = await res.json();
-      setPuzzleContent(data);
-    } catch (e) {
-      console.error(e);
-    }
-  };
 
-  const handleDoorSelect = (door: PuzzleDoor) => {
-    setSelectedDoor(door);
-    fetchPuzzle(door.puzzle_id);
-  };
 
   const handleAbandon = async () => {
     if (!runId || !selectedDoor) return;
